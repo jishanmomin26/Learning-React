@@ -1,23 +1,28 @@
-import UserCard from "./components/UserCard";
-import Mercedes from "../public/Mercedes.png";
-import bird from "../public/bird.png";
+import { useState } from "react";
 import "./App.css";
+import Bulb from "./components/Bulb";
 
 function App() {
+  const [isBulbOneOn, setIsBulbOneOn] = useState(true);
+
+  const toggleBulbs = () => {
+    setIsBulbOneOn(!isBulbOneOn);
+  };
+
   return (
     <div className="container">
-      <UserCard
-        name="Mercedes"
-        desc="This is a Mercedes Car"
-        image={Mercedes}
-        style={{ "border-radius": "500px" }}
-      />
-      <UserCard
-        name="Bird"
-        desc="Bird is Flying"
-        image={bird}
-        style={{ "border-radius": "500px" }}
-      />
+      <div className="card">
+        <h1>Bulb Toggle using useState</h1>
+
+        <div className="bulb-container">
+          <Bulb isOn={isBulbOneOn} label="Bulb 1" />
+          <Bulb isOn={!isBulbOneOn} label="Bulb 2" />
+        </div>
+
+        <button className="switch-btn" onClick={toggleBulbs}>
+          Switch Bulbs
+        </button>
+      </div>
     </div>
   );
 }
