@@ -1,1 +1,372 @@
 /* App.css */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  background:
+    radial-gradient(circle at 15% 20%, #7c3aed 0%, transparent 25%),
+    radial-gradient(circle at 85% 15%, #0891b2 0%, transparent 25%),
+    radial-gradient(circle at 50% 100%, #ec4899 0%, transparent 30%),
+    #050816;
+
+  min-height: 100vh;
+}
+
+
+/* ==========================
+   TITLE
+   ========================== */
+
+h1 {
+  color: white;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 3px;
+
+  text-shadow:
+    0 0 10px #8b5cf6,
+    0 0 30px #8b5cf6,
+    0 0 60px rgba(139, 92, 246, 0.5);
+}
+
+
+/* ==========================
+   3D WORLD
+   ========================== */
+
+.row {
+  perspective: 1800px;
+}
+
+
+/* ==========================
+   CARD
+   ========================== */
+
+.card {
+  position: relative;
+
+  min-height: 290px;
+
+  padding: 30px !important;
+
+  border-radius: 28px !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(30, 27, 75, 0.75),
+      rgba(15, 23, 42, 0.55)
+    ) !important;
+
+  border: 1px solid rgba(167, 139, 250, 0.45) !important;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.12s ease-out,
+    box-shadow 0.4s ease,
+    border 0.4s ease;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 0 0 rgba(139, 92, 246, 0);
+
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+
+/* ==========================
+   3D OUTER GLOW
+   ========================== */
+
+.card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -3px;
+
+  border-radius: 30px;
+
+  background: linear-gradient(
+    135deg,
+    #8b5cf6,
+    transparent 35%,
+    #06b6d4,
+    transparent 70%,
+    #ec4899
+  );
+
+  opacity: 0;
+
+  z-index: -1;
+
+  filter: blur(12px);
+
+  transition: opacity 0.4s ease;
+}
+
+
+/* ==========================
+   MOUSE SHINE
+   ========================== */
+
+.card::after {
+  content: "";
+
+  position: absolute;
+
+  top: -100%;
+  left: -100%;
+
+  width: 250%;
+  height: 250%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.20),
+      transparent 20%
+    );
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
+}
+
+
+/* ==========================
+   HOVER CARD
+   ========================== */
+
+.card:hover {
+  border-color: rgba(196, 181, 253, 0.9) !important;
+
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.65),
+    0 0 30px rgba(139, 92, 246, 0.7),
+    0 0 80px rgba(139, 92, 246, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+
+/* ==========================
+   3D CONTENT
+   ========================== */
+
+.card h4 {
+  position: relative;
+
+  z-index: 10;
+
+  color: #ddd6fe;
+
+  font-size: 30px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 28px;
+
+  transform: translateZ(65px);
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+
+.card:hover h4 {
+  color: white;
+
+  text-shadow:
+    0 0 10px #8b5cf6,
+    0 0 25px #8b5cf6,
+    0 0 45px rgba(139, 92, 246, 0.7);
+}
+
+
+/* ==========================
+   PARAGRAPHS
+   ========================== */
+
+.card p {
+  position: relative;
+
+  z-index: 10;
+
+  color: #cbd5e1;
+
+  font-size: 16px;
+
+  margin-bottom: 16px;
+
+  transform: translateZ(45px);
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+
+.card:hover p {
+  color: white;
+
+  transform: translateZ(55px);
+}
+
+
+/* ==========================
+   STRONG LABELS
+   ========================== */
+
+.card strong {
+  color: #ffffff;
+}
+
+
+/* ==========================
+   MARKS BADGE
+   ========================== */
+
+.card p:last-child {
+  display: inline-block;
+
+  min-width: 150px;
+
+  padding: 13px 18px;
+
+  margin-top: 5px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139, 92, 246, 0.35),
+      rgba(6, 182, 212, 0.15)
+    );
+
+  border: 1px solid rgba(167, 139, 250, 0.5);
+
+  color: #ddd6fe;
+
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.25);
+
+  transform: translateZ(75px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.card:hover p:last-child {
+  transform:
+    translateZ(100px)
+    scale(1.06);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139, 92, 246, 0.55),
+      rgba(6, 182, 212, 0.25)
+    );
+
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(139, 92, 246, 0.5);
+}
+
+
+/* ==========================
+   GLASS REFLECTION
+   ========================== */
+
+.card > * {
+  transform-style: preserve-3d;
+}
+
+
+/* ==========================
+   FLOATING ANIMATION
+   ========================== */
+
+.card {
+  animation: floating 5s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -5px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+
+/* Stop floating while hovering */
+
+.card:hover {
+  animation-play-state: paused;
+}
+
+
+/* ==========================
+   RESPONSIVE
+   ========================== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 35px;
+  }
+
+  .card {
+    margin-bottom: 25px;
+  }
+}
+
+.card::after {
+  background:
+    radial-gradient(
+      circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(255, 255, 255, 0.25),
+      transparent 25%
+    );
+
+  opacity: 0;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
