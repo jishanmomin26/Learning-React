@@ -1,0 +1,106 @@
+.loading-container {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  padding: 65px 25px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+
+  box-shadow:
+    0 5px 15px rgba(15, 23, 42, 0.06);
+}
+
+/* Decorative circles */
+
+.loading-container::before {
+  content: "";
+
+  position: absolute;
+
+  width: 160px;
+  height: 160px;
+
+  top: -90px;
+  left: -90px;
+
+  border-radius: 50%;
+
+  background: #dbeafe;
+
+  opacity: 0.5;
+}
+
+.loading-container::after {
+  content: "";
+
+  position: absolute;
+
+  width: 140px;
+  height: 140px;
+
+  bottom: -80px;
+  right: -80px;
+
+  border-radius: 50%;
+
+  background: #e0e7ff;
+
+  opacity: 0.5;
+}
+
+/* Spinner */
+
+.loading-spinner {
+  position: relative;
+  z-index: 2;
+
+  width: 52px;
+  height: 52px;
+
+  margin: 0 auto 20px;
+
+  border: 5px solid #dbeafe;
+
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+.loading-container h2 {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.loading-container p {
+  position: relative;
+  z-index: 2;
+
+  margin: 8px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

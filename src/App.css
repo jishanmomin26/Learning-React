@@ -1,372 +1,212 @@
-/* App.css */
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-
-  background:
-    radial-gradient(circle at 15% 20%, #7c3aed 0%, transparent 25%),
-    radial-gradient(circle at 85% 15%, #0891b2 0%, transparent 25%),
-    radial-gradient(circle at 50% 100%, #ec4899 0%, transparent 30%),
-    #050816;
-
+.app-page {
+  width: 100%;
   min-height: 100vh;
-}
-
-
-/* ==========================
-   TITLE
-   ========================== */
-
-h1 {
-  color: white;
-  font-size: 48px;
-  font-weight: 800;
-  letter-spacing: 3px;
-
-  text-shadow:
-    0 0 10px #8b5cf6,
-    0 0 30px #8b5cf6,
-    0 0 60px rgba(139, 92, 246, 0.5);
-}
-
-
-/* ==========================
-   3D WORLD
-   ========================== */
-
-.row {
-  perspective: 1800px;
-}
-
-
-/* ==========================
-   CARD
-   ========================== */
-
-.card {
-  position: relative;
-
-  min-height: 290px;
-
-  padding: 30px !important;
-
-  border-radius: 28px !important;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(30, 27, 75, 0.75),
-      rgba(15, 23, 42, 0.55)
-    ) !important;
-
-  border: 1px solid rgba(167, 139, 250, 0.45) !important;
-
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  transform-style: preserve-3d;
-
-  transition:
-    transform 0.12s ease-out,
-    box-shadow 0.4s ease,
-    border 0.4s ease;
-
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.5),
-    0 0 0 rgba(139, 92, 246, 0);
-
-  overflow: hidden;
-
-  cursor: pointer;
-}
-
-
-/* ==========================
-   3D OUTER GLOW
-   ========================== */
-
-.card::before {
-  content: "";
-
-  position: absolute;
-
-  inset: -3px;
-
-  border-radius: 30px;
-
-  background: linear-gradient(
-    135deg,
-    #8b5cf6,
-    transparent 35%,
-    #06b6d4,
-    transparent 70%,
-    #ec4899
-  );
-
-  opacity: 0;
-
-  z-index: -1;
-
-  filter: blur(12px);
-
-  transition: opacity 0.4s ease;
-}
-
-
-/* ==========================
-   MOUSE SHINE
-   ========================== */
-
-.card::after {
-  content: "";
-
-  position: absolute;
-
-  top: -100%;
-  left: -100%;
-
-  width: 250%;
-  height: 250%;
-
   background:
     radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.20),
-      transparent 20%
-    );
+      circle at 15% 10%,
+      rgba(37, 99, 235, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(99, 102, 241, 0.08),
+      transparent 30%
+    ),
+    #f8fafc;
 
-  opacity: 0;
-
-  pointer-events: none;
-
-  transition: opacity 0.3s ease;
+  color: #1e293b;
 }
 
+.main-container {
+  width: 100%;
+  max-width: 1200px;
 
-/* ==========================
-   HOVER CARD
-   ========================== */
+  margin: 0 auto;
 
-.card:hover {
-  border-color: rgba(196, 181, 253, 0.9) !important;
-
-  box-shadow:
-    0 40px 80px rgba(0, 0, 0, 0.65),
-    0 0 30px rgba(139, 92, 246, 0.7),
-    0 0 80px rgba(139, 92, 246, 0.25),
-    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  padding: 55px 32px 35px;
 }
 
-.card:hover::before {
-  opacity: 1;
+/* =========================
+   HEADER
+========================= */
+
+.page-header {
+  text-align: center;
+  margin-bottom: 45px;
 }
 
-.card:hover::after {
-  opacity: 1;
-}
-
-
-/* ==========================
-   3D CONTENT
-   ========================== */
-
-.card h4 {
-  position: relative;
-
-  z-index: 10;
-
-  color: #ddd6fe;
-
-  font-size: 30px;
-
-  font-weight: 800;
-
-  letter-spacing: 1px;
-
-  margin-bottom: 28px;
-
-  transform: translateZ(65px);
-
-  transition:
-    color 0.3s ease,
-    text-shadow 0.3s ease;
-}
-
-
-.card:hover h4 {
-  color: white;
-
-  text-shadow:
-    0 0 10px #8b5cf6,
-    0 0 25px #8b5cf6,
-    0 0 45px rgba(139, 92, 246, 0.7);
-}
-
-
-/* ==========================
-   PARAGRAPHS
-   ========================== */
-
-.card p {
-  position: relative;
-
-  z-index: 10;
-
-  color: #cbd5e1;
-
-  font-size: 16px;
-
-  margin-bottom: 16px;
-
-  transform: translateZ(45px);
-
-  transition:
-    transform 0.3s ease,
-    color 0.3s ease;
-}
-
-
-.card:hover p {
-  color: white;
-
-  transform: translateZ(55px);
-}
-
-
-/* ==========================
-   STRONG LABELS
-   ========================== */
-
-.card strong {
-  color: #ffffff;
-}
-
-
-/* ==========================
-   MARKS BADGE
-   ========================== */
-
-.card p:last-child {
+.experiment-badge {
   display: inline-block;
 
-  min-width: 150px;
+  padding: 7px 14px;
+  margin-bottom: 16px;
 
-  padding: 13px 18px;
+  border-radius: 999px;
 
-  margin-top: 5px;
+  background: #eff6ff;
+  color: #2563eb;
 
-  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 700;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(139, 92, 246, 0.35),
-      rgba(6, 182, 212, 0.15)
-    );
-
-  border: 1px solid rgba(167, 139, 250, 0.5);
-
-  color: #ddd6fe;
-
-  box-shadow:
-    0 10px 20px rgba(0, 0, 0, 0.25);
-
-  transform: translateZ(75px);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
+  letter-spacing: 0.6px;
 }
 
+.page-header h1 {
+  margin: 0;
 
-.card:hover p:last-child {
-  transform:
-    translateZ(100px)
-    scale(1.06);
+  font-size: clamp(36px, 5vw, 52px);
+  line-height: 1.1;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(139, 92, 246, 0.55),
-      rgba(6, 182, 212, 0.25)
-    );
+  font-weight: 800;
 
-  box-shadow:
-    0 15px 30px rgba(0, 0, 0, 0.4),
-    0 0 25px rgba(139, 92, 246, 0.5);
+  color: #0f172a;
 }
 
+.page-header p {
+  max-width: 600px;
 
-/* ==========================
-   GLASS REFLECTION
-   ========================== */
+  margin: 14px auto 0;
 
-.card > * {
-  transform-style: preserve-3d;
+  color: #64748b;
+
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-
-/* ==========================
-   FLOATING ANIMATION
-   ========================== */
-
-.card {
-  animation: floating 5s ease-in-out infinite;
+.page-header p span {
+  color: #2563eb;
+  font-weight: 700;
 }
 
-@keyframes floating {
-  0% {
-    margin-top: 0;
+/* =========================
+   SECTION HEADER
+========================= */
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+}
+
+.section-header h2 {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 750;
+
+  color: #0f172a;
+}
+
+.section-header p {
+  margin: 5px 0 0;
+
+  color: #64748b;
+  font-size: 14px;
+}
+
+.student-count {
+  flex-shrink: 0;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+}
+
+/* =========================
+   STUDENT GRID
+========================= */
+
+.student-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+
+  width: 100%;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.page-footer {
+  margin-top: 50px;
+
+  text-align: center;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+  .main-container {
+    padding: 45px 24px 30px;
   }
 
-  50% {
-    margin-top: -5px;
-  }
+  .student-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
 
-  100% {
-    margin-top: 0;
-  }
-}
-
-
-/* Stop floating while hovering */
-
-.card:hover {
-  animation-play-state: paused;
-}
-
-
-/* ==========================
-   RESPONSIVE
-   ========================== */
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 35px;
-  }
-
-  .card {
-    margin-bottom: 25px;
+    gap: 20px;
   }
 }
 
-.card::after {
-  background:
-    radial-gradient(
-      circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(255, 255, 255, 0.25),
-      transparent 25%
-    );
+/* =========================
+   MOBILE
+========================= */
 
-  opacity: 0;
-}
+@media (max-width: 640px) {
 
-.card:hover::after {
-  opacity: 1;
+  .main-container {
+    padding: 35px 16px 25px;
+  }
+
+  .page-header {
+    margin-bottom: 35px;
+  }
+
+  .page-header h1 {
+    font-size: 36px;
+  }
+
+  .page-header p {
+    font-size: 14px;
+  }
+
+  .section-header {
+    align-items: flex-start;
+    flex-direction: column;
+
+    margin-bottom: 18px;
+  }
+
+  .student-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .page-footer {
+    margin-top: 35px;
+  }
 }
