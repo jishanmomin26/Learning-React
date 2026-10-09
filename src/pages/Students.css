@@ -1,0 +1,122 @@
+.students-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 65px 30px;
+}
+
+.students-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.page-badge {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.students-header h1 {
+  margin: 16px 0 10px;
+  color: #0f172a;
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.students-header p {
+  color: #64748b;
+}
+
+.students-header strong {
+  color: #2563eb;
+}
+
+.students-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.student-route-card {
+  position: relative;
+  padding: 25px;
+  overflow: hidden;
+  border: 1px solid #dbe4f0;
+  border-radius: 17px;
+  background: linear-gradient(145deg, #ffffff, #f3f7ff);
+  box-shadow: 0 5px 15px rgba(15, 23, 42, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.student-route-card:hover {
+  transform: translateY(-7px);
+  border-color: #b9cdf7;
+  box-shadow: 0 18px 35px rgba(37, 99, 235, 0.12);
+}
+
+.student-number {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  font-weight: 800;
+}
+
+.student-route-card h2 {
+  margin: 0 0 7px;
+  color: #0f172a;
+  font-size: 20px;
+}
+
+.student-route-card p {
+  margin: 0 0 12px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.student-year {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.view-button {
+  display: block;
+  margin-top: 22px;
+  padding: 11px;
+  text-align: center;
+  border-radius: 9px;
+  background: #0f172a;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.view-button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+  .students-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .students-header h1 {
+    font-size: 34px;
+  }
+}
